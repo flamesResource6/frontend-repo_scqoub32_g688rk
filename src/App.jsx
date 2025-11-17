@@ -1,28 +1,24 @@
-import { useState } from 'react'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import { Symptoms, Prevention, Diagnosis, Resources } from './components/Sections'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-white text-slate-800">
+      <Navbar />
+      <main>
+        <Hero />
+        <Symptoms />
+        <Prevention />
+        <Diagnosis />
+        <Resources />
+      </main>
+      <footer className="border-t border-slate-200 mt-16">
+        <div className="mx-auto max-w-6xl px-4 py-8 text-sm text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p>Malaria Aware — Empowering communities with timely information.</p>
+          <a href="/test" className="text-emerald-700 hover:underline">System check</a>
         </div>
-      </div>
+      </footer>
     </div>
   )
 }
-
-export default App
